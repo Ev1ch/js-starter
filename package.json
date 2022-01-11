@@ -14,6 +14,8 @@
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.7",
     "prettier": "^2.5.1",
     "sass": "^1.47.0",
     "stylelint": "^14.2.0",
@@ -23,6 +25,13 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepare": "husky install",
+    "eslint": "eslint . --ext .js,.jsx --ignore-path .gitignore",
+    "eslint:fix": "eslint . --ext .js,.jsx --fix --ignore-path .gitignore",
+    "prettier": "prettier . --check --ignore-path .gitignore",
+    "prettier:fix": "prettier . --write --ignore-path .gitignore",
+    "stylelint": "stylelint **/*.scss --ignore-path .gitignore",
+    "stylelint:fix": "stylelint **/*.scss --fix --ignore-path .gitignore"
   }
 }
