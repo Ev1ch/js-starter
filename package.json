@@ -8,6 +8,8 @@
     "react-scripts": "5.0.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^16.0.2",
+    "@commitlint/config-conventional": "^16.0.0",
     "eslint": "^8.6.0",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-react": "^7.28.0",
