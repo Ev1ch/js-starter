@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "stylelint.vscode-stylelint",
+    "esbenp.prettier-vscode",
+    "eg2.vscode-npm-script",
+    "syler.sass-indented",
+    "webben.browserslist",
+    "eamodio.gitlens",
+    "dsznajder.es7-react-js-snippets",
+    "simonsiefke.svg-preview",
+    "kisstkondoros.vscode-gutter-preview"
+  ]
+}
