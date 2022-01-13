@@ -1,0 +1,41 @@
+$sides: (
+  "top": "t",
+  "right": "r",
+  "bottom": "b",
+  "left": "l",
+);
+$gutter: 5;
+
+@each $side, $letter in $sides {
+  @for $px from 1 through 10 {
+    .m#{$letter}-#{$px * $gutter} {
+      margin-#{$side}: #{$px * $gutter}px;
+    }
+
+    .p#{$letter}-#{$px * $gutter} {
+      padding-#{$side}: #{$px * $gutter}px;
+    }
+
+    .m-#{$px * $gutter} {
+      margin: #{$px * $gutter}px;
+    }
+
+    .p-#{$px * $gutter} {
+      padding: #{$px * $gutter}px;
+    }
+  }
+}
+
+.m {
+  &-auto {
+    margin: auto;
+  }
+
+  &l-auto {
+    margin-left: auto;
+  }
+
+  &r-auto {
+    margin-right: auto;
+  }
+}
