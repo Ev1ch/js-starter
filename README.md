@@ -56,7 +56,19 @@ Folder and files structure of the project:
 
 Common component is just a folder with 2 files. Main file is called `index.jsx`. React framework is already configured to resolve main file, so use just `%component%`, not `%component%/index.jsx`. HTML and JS code is inside `index`, styles are extracted in `.module.scss` file is the same directory and imported in component. BEM is offered to use in the names of SCSS classes, but there are some atomic classes in `styles` too. PropTypes must be specified in `index.jsx` as well.
 
-`components` folder contains some categories, so after creating a component place it in the correct folder and add its export in `index.js` file of the category.
+There is `jsconfig`, which is already configured to allow convinient imports. It is basically resolving `src` directory, so you can use not
+
+```js
+import Button from '../../components/base/button';
+```
+
+but
+
+```js
+import { Button } from 'components/base';
+```
+
+A lot of folders contain subfolders, so after creating a directory add exports in `index` file. It makes importing everything much more easier.
 
 All logic is extracted to containers. Those components pass properties to pages, which are just a views and do not have any logic. We can say that this is something like MVC pattern, where `components/pages` are V and `containers` are C.
 
