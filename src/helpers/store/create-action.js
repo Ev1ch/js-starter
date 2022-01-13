@@ -1,10 +1,10 @@
-function createAction(action) {
+function createAction(type) {
   return function (payload) {
     const actionObject = {
-      type: action,
+      type,
     };
 
-    if (payload) {
+    if (payload !== undefined) {
       actionObject.payload = payload;
     }
 
