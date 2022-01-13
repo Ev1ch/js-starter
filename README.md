@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# Basic information
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Start-up
 
-## Available Scripts
+To start the application do the following:
 
-In the project directory, you can run:
+- Clone the repository
+- Go to the respository directory and execute: `npm install`
+- Execute command: `npm start`
+- Go to `http://localhost:3000` in a browser
 
-### `npm start`
+## Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Main stack includes:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- React
+- Redux
+- Redux Saga _(for working with asynchronous and other middlewares in Redux)_
+- React Router
+- clsx _(for merging classNames)_
+- SCSS
 
-### `npm test`
+Developing stack includes:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Husky _(pre-commit hooks)_
+- Eslint
+- Prettier
+- Stylelint
+- Commitlint _(linting of commit messages)_
+- Lint-staged _(starting linters only when files of special format change)_
+- Extentions recommendations _(for VS Code)_
+- Settings recommendations _(for VS Code)_
+- Connected Devtools _(for Redux)_
 
-### `npm run build`
+## Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Folders
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Folder and files structure of the project:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- `api` - functions which allow to call API correctly and easily
+- `assets` - folder with all media files, for example images
+- `common` - constants and enums
+- `components` - all components, which are used in views
+  - `base` - atomic components, which are common and used in bigger components
+  - `common` - common components, which are used on most pages, for example footer
+  - `modals` - all modal windows, which are used
+    - `base` - base modal window, which can be taken as an example
+- `helpers` - functions, which are used in application to optimise some routine operations
+- `containers` - application logic components, which pass properties to `pages`
+- `services` - core logic of all entities, interact with API
+- `store` - core application configured store
+- `styles` - core styles, which are common for all parts of application, also have some atomic classes
 
-### `npm run eject`
+### Components
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Common component is just a folder with 2 files. Main file is called `index.jsx`. React framework is already configured to resolve main file, so use just `%component%`, not `%component%/index.jsx`. HTML and JS code is inside `index`, styles are extracted in `.module.scss` file is the same directory and imported in component. BEM is offered to use in the names of SCSS classes. PropTypes must be specified in `index.jsx` as well.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`components` folder contains some categories, so after creating a component place it in the correct folder and add its export in `index.js` file of the category.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+All logic is extracted to containers. Those components pass properties to pages, which are just a views and do not have any logic. We can say that this is something like MVC pattern, where `components/pages` are V and `containers` are C.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+All common/example files and their structure you can already find in this started.
