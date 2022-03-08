@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import homeReducer from 'containers/home/logic';
+import homeReducer from 'store/home';
 
 const reducer = combineReducers({
   home: homeReducer,

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import * as actions from './logic/actions';
+import * as actions from 'store/home/actions';
 import { Home as HomePage } from 'components/pages';
 
 function Home() {

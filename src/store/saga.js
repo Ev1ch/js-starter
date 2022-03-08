@@ -1,5 +1,5 @@
 import { all } from '@redux-saga/core/effects';
-import homeSaga from 'containers/home/logic/saga';
+import homeSaga from 'store/home/saga';
 
 function* rootSaga() {
   yield all([homeSaga()]);
