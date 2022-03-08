@@ -1,1 +1,1 @@
-export { default as Service } from './base';
+export * as EntitiesServices from './entities';
